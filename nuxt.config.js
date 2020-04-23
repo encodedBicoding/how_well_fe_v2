@@ -1,8 +1,7 @@
 module.exports = {
   mode: 'universal',
   generate: {
-    fallback: true,
-    routes: ['rp/token/test@email.com', 'plaque/username/1/hwdykm']
+    fallback: true
   },
   /*
    ** Headers of the page
