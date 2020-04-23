@@ -123,10 +123,18 @@ module.exports = {
     [
       '@nuxtjs/sitemap',
       {
-        sitemap: {
-          hostname: 'https://hwdykm.xyz',
-          gzip: true
-        }
+        path: '/sitemap.xml',
+        exclude: [],
+        routes: [],
+        cacheTime: 900000,
+        etag: {
+          weak: false
+        },
+        gzip: false,
+        trailingSlash: false,
+        defaults: {},
+        pathGzip: '/sitemap.xml',
+        hostname: 'https://hwdykm.xyz'
       }
     ],
     [

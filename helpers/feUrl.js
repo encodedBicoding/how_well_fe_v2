@@ -1,3 +1,3 @@
-const FE_URL = 'http://localhost:3000'
+const FE_URL = 'https://hwdykm.xyz'
 export default FE_URL
 // 'https://hwdykm.xyz'
