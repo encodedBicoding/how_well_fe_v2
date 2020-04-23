@@ -140,7 +140,7 @@
         <div>
           <p>
             By creating an account, you agree to our
-            <Nuxt-Link to="/" class="tdnone">
+            <Nuxt-Link to="/terms" class="tdnone">
               <span class="white tt">Terms of use</span>
             </Nuxt-Link>
           </p>

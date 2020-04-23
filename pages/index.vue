@@ -267,7 +267,7 @@
           <div id="image" class="col-md-6 col-lg-3">
             <img
               src="../assets/images/pg1.png"
-              alt="anonymous messages received by user"
+              alt="super fast answer feedback to question for online quiz"
               width="100%"
               height="auto"
             />
@@ -275,7 +275,7 @@
           <div id="image" class="col-md-6 col-lg-3">
             <img
               src="../assets/images/phone4.png"
-              alt="anonymous messages received by user"
+              alt="users can choose to reply anonymously or not"
               width="100%"
               height="auto"
             />
@@ -283,7 +283,7 @@
           <div id="image" class="col-md-6 col-lg-3">
             <img
               src="../assets/images/phone6.png"
-              alt="anonymous messages received by user"
+              alt="user dashboard to view all anonymous responses and online quiz responses"
               width="100%"
               height="auto"
             />
@@ -291,7 +291,7 @@
           <div id="image" class="col-md-6 col-lg-3">
             <img
               src="../assets/images/pg2.png"
-              alt="anonymous messages received by user"
+              alt="how well do you know me main plaque page"
               width="100%"
               height="auto"
             />

@@ -1,5 +1,8 @@
 module.exports = {
   mode: 'universal',
+  generate: {
+    fallback: true
+  },
   /*
    ** Headers of the page
    */
@@ -80,7 +83,7 @@ module.exports = {
         rel: 'stylesheet',
         href: 'https://use.typekit.net/idd5osv.css'
       },
-      { rel: 'icon', type: 'image/x-icon', href: 'favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
   env: {
@@ -118,10 +121,31 @@ module.exports = {
     '@nuxtjs/dotenv',
     'nuxt-webfontloader',
     [
+      '@nuxtjs/sitemap',
+      {
+        sitemap: {
+          hostname: 'https://hwdykm.xyz',
+          gzip: true
+        }
+      }
+    ],
+    [
       'nuxt-sweetalert2',
       {
         confirmButtonColor: '#ff5e34',
         cancelButtonColor: '#393939'
+      }
+    ],
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: 'UA-162679180-1'
+      }
+    ],
+    [
+      '@nuxtjs/google-adsense',
+      {
+        id: 'ca-pub-6604666533289792'
       }
     ],
     [

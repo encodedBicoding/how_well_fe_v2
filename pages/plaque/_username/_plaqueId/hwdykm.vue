@@ -614,7 +614,7 @@ export default {
         type: 'GET',
         url: `${BASE_URL}/plaque/${this.$route.params.plaqueId}`,
         contentType: 'application/json',
-        error: () => {
+        error: (res) => {
           this.loadingSinglePlaque = false
           this.$router.push({
             name: 'begin',
