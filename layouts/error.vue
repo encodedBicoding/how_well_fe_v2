@@ -25,7 +25,11 @@
             </div>
             <div class="nfc">
               <p>
-                {{ error.message || 'Plaque not found' }}
+                {{
+                  error.statusCode !== 400
+                    ? 'internal server error'
+                    : error.message
+                }}
               </p>
             </div>
           </div>
