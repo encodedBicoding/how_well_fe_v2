@@ -690,11 +690,14 @@ export default {
     }
   },
   async mounted() {
+    this.loadingSinglePlaque = true
     this.validateUserRoute()
     if (sessionStorage.getItem('__token__HWDYKM__user__')) {
       await this.getCurrentUser()
+      this.loadingSinglePlaque = false
     }
     await this.getSinglePlaque()
+    this.loadingSinglePlaque = false
   },
   data() {
     return {
