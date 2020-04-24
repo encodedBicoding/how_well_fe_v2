@@ -2,7 +2,7 @@
   <div class="dashboard">
     <div :class="showModal ? 'modal' : 'hideModal'">
       <div class="f-right" @click="() => toggleModal()">X</div>
-      <div class="modal-content">
+      <div class="modal-content create-plaque-modal">
         <form
           id="new_plaque"
           class="modal-form"
@@ -172,7 +172,7 @@
     </div>
     <div :class="deletePlaqueModal ? 'modal' : 'hideModal'">
       <div class="f-right" @click="() => hidePlaque()">X</div>
-      <div class="modal-content">
+      <div class="modal-content create-plaque-modal">
         <div class="modal-form">
           <div class="ays">
             <p>Delete Plaque?</p>

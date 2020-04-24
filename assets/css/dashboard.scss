@@ -164,6 +164,9 @@
   z-index: -96;
   background-color: #000;
 }
+.create-plaque-modal{
+  margin-top: 15%;
+}
 .modal-form{
   width: 45%;
   display: flex;
@@ -440,6 +443,9 @@ and (min-device-width: 561px) {
     top: -55px;
     padding: 0 !important;
   }
+  .create-plaque-modal{
+    margin-top: 40% !important;
+  }
 }
 @media(max-width: 800px) {
   .modal-form{
@@ -447,6 +453,9 @@ and (min-device-width: 561px) {
     position: relative;
     top: -55px;
     padding: 0 !important;
+  }
+  .create-plaque-modal{
+    margin-top: 25%;
   }
 }
 @media only screen 

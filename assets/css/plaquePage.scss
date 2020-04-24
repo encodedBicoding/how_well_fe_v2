@@ -18,6 +18,7 @@
   width: 50%;
   padding: 0;
 }
+
 .page-body-remix2{
   background-color: rgba(7, 7, 7, 0.26);
   width: 60%;
@@ -402,6 +403,9 @@
   }
   .body, .page-body{
     width: 100% !important;
+  }
+  .page-body-remix{
+    margin-top: 15px;
   }
 }
 @media(max-width: 800px) {
