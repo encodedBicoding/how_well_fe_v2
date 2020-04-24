@@ -43,7 +43,7 @@
   padding: 3px;
   background: transparent;
   bottom: 2px;
-  margin-left: 85%;
+  margin-left: 80%;
 }
 .add{
   font-weight: 700;
@@ -432,18 +432,21 @@ and (min-device-width: 561px) {
   }
   .body, .page-body{
     width: 100% !important;
+    padding: 0 !important;
   }
   .modal-form{
-    width: 90%;
+    width: 100% !important;
     position: relative;
     top: -55px;
+    padding: 0 !important;
   }
 }
 @media(max-width: 800px) {
   .modal-form{
-    width: 70%;
+    width: 60%;
     position: relative;
     top: -55px;
+    padding: 0 !important;
   }
 }
 @media only screen 
