@@ -26,7 +26,7 @@
             <div class="nfc">
               <p>
                 {{
-                  error.statusCode !== 400
+                  error.statusCode !== 404
                     ? 'internal server error'
                     : error.message
                 }}
