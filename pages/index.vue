@@ -35,13 +35,13 @@
                       </div>
                       <div
                         class="mobile-nav-item"
-                        @click="() => this.$router.push({ name: 'About' })"
+                        @click="() => this.$router.push({ name: 'about' })"
                       >
                         <p>ABOUT</p>
                       </div>
                       <div
                         class="mobile-nav-item"
-                        @click="() => this.$router.push({ name: 'Contact' })"
+                        @click="() => this.$router.push({ name: 'contact' })"
                       >
                         <p>CONTACT</p>
                       </div>
@@ -65,7 +65,7 @@
                       </div>
                       <div
                         class="mobile-nav-item"
-                        @click="() => this.$router.push({ name: 'Terms' })"
+                        @click="() => this.$router.push({ name: 'terms' })"
                       >
                         <p>TERMS</p>
                       </div>
@@ -79,13 +79,13 @@
                 </div>
                 <div
                   class="stb"
-                  @click="() => this.$router.push({ name: 'About' })"
+                  @click="() => this.$router.push({ name: 'about' })"
                 >
                   <p>ABOUT</p>
                 </div>
                 <div
                   class="stb"
-                  @click="() => this.$router.push({ name: 'Contact' })"
+                  @click="() => this.$router.push({ name: 'aontact' })"
                 >
                   <p>CONTACT</p>
                 </div>
@@ -109,7 +109,7 @@
                 </div>
                 <div
                   class="stb"
-                  @click="() => this.$router.push({ name: 'Terms' })"
+                  @click="() => this.$router.push({ name: 'terms' })"
                 >
                   <p>TERMS</p>
                 </div>
