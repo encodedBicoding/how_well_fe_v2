@@ -16,7 +16,7 @@ module.exports = {
         hid: 'description',
         name: 'description',
         content:
-          '    How well do you know me, is the best FREE anonymous messaging and online quiz platform.'
+          'How well do you know me, is the best FREE anonymous messaging and online quiz platform.'
       },
       {
         hid: 'locale',
@@ -181,5 +181,36 @@ module.exports = {
      ** You can extend webpack config here
      */
     extend(config, ctx) {}
+  },
+  pwa: {
+    meta: {
+      description:
+        ' How well do you know me, is the best FREE anonymous messaging and online quiz platform.',
+      nativeUI: true,
+      mobileAppIOS: false
+    },
+    manifest: {
+      name: 'HWDYKM',
+      lang: 'en',
+      theme_color: '#ff5a09',
+      description:
+        'How well do you know me, is the best FREE anonymous messaging and online quiz platform.'
+    },
+    categories: [
+      'online quiz',
+      'online games',
+      'anonymous messaging',
+      'anonymous messages',
+      'social platform',
+      'online messages',
+      'online fun and games'
+    ],
+    related_applications: [
+      {
+        platform: 'kubool',
+        url:
+          'https://play.google.com/store/apps/details?id=com.kubool.app&utm_source=website&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1'
+      }
+    ]
   }
 }
