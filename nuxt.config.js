@@ -86,10 +86,6 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
   },
-  env: {
-    BE_URL: process.env.API,
-    FE_URL: process.env.BASE_URL || 'http://localhost:3000'
-  },
   /*
    ** Customize the progress-bar color
    */
