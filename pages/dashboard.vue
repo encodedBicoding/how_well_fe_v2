@@ -471,25 +471,25 @@ export default {
     },
     editQuestionInPlaque(event) {
       event.preventDefault()
-      if (!this.questionToEditQuestion || !this.questionToEditAnswer) {
+      if (!this.questionToEditQuestion) {
         return
       }
-      this.questionToEditOptions = this.questionToEditOptions.split(',')
+      if (!this.questionToEditAnswer) {
+        this.questionToEditAnswer = 'N/A'
+        this.showQueEditAnswers = false
+      }
+      this.questionToEditOptions = this.questionToEditOptions
+        .split(',')
+        .map((od) => od.trim().toLowerCase())
       if (
         this.questionToEditOptions.length >= 0 &&
-        this.questionToEditOptions[0] !== ''
+        this.questionToEditOptions[0] !== '' &&
+        this.showQueEditAnswers
       ) {
         if (!this.questionToEditOptions.includes(this.questionToEditAnswer)) {
           this.questionToEditOptions.push(this.questionToEditAnswer)
         }
       }
-
-      this.isRequesting = true
-      let formData = $('#edit_question').serializeArray()
-      formData = formData.reduce((acc, curr) => {
-        acc[curr.name] = curr.value.trim()
-        return acc
-      }, {})
       this.questionToEditOptions = new Set(this.questionToEditOptions)
 
       const distinctData = []
@@ -498,8 +498,17 @@ export default {
         distinctData.push(data)
       }
 
+      this.isRequesting = true
+      let formData = $('#edit_question').serializeArray()
+      formData = formData.reduce((acc, curr) => {
+        acc[curr.name] = curr.value.trim()
+        return acc
+      }, {})
+
       this.questionToEditOptions = distinctData
       formData.options = this.questionToEditOptions
+      formData.showAnswer = this.showQueEditAnswers
+      formData.answer = this.questionToEditAnswer
       $.ajax({
         type: 'PATCH',
         url: `${BASE_URL}/edit/question/${this.questionToEditId}`,
@@ -869,6 +878,7 @@ export default {
       answerData: '',
       optionData: '',
       showQueAnswer: true,
+      showQueEditAnswers: true,
       isRequesting: false,
       showPlaqueModal: false,
       plaqueModalId: null,
