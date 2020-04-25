@@ -128,7 +128,7 @@
               <p>Forgot password?</p>
               <a
                 class="CLBE pswCh w90"
-                href="https://www.hwdykm.xyz/rp/reset/HN_jkdjw_322"
+                href="http://www.hwdykm.xyz/rp/reset/HN_jkdjw_322"
               >
                 REQUEST PASSWORD CHANGE
               </a>
