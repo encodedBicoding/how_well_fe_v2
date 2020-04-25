@@ -61,7 +61,7 @@
       <a
         v-if="this.$route.params.username === currentUsername"
         class="page-body body-flex dash "
-        href="https://hwdykm.xyz/dashboard"
+        href="https://www.hwdykm.xyz/dashboard"
       >
         VIEW DASHBOARD
       </a>
