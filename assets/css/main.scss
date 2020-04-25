@@ -271,7 +271,7 @@ a{
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  height: 26rem;
+  height: 28rem;
 }
 .item-end{
   flex-grow: 1;
@@ -351,6 +351,12 @@ a{
     position: absolute;
     margin-right: 10%;
     margin-top: 6%;
+  }
+  @media(max-width: 1200px) {
+    .row{
+      display: grid;
+      grid-template-columns: auto auto;
+    }
   }
   @media(max-width: 800px) {
     .mobile{
