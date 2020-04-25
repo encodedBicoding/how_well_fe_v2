@@ -49,14 +49,14 @@
                 placeholder="******"
               />
               <div class="password-icon" @click="() => togglePassword()">
-                <div v-if="!showPass">
+                <div v-if="showPass">
                   <font-awesome-icon
                     :icon="['fas', 'eye']"
                     class="black"
                     size="lg"
                   />
                 </div>
-                <div v-if="showPass">
+                <div v-if="!showPass">
                   <font-awesome-icon
                     :icon="['fas', 'eye-slash']"
                     class="black"
