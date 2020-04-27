@@ -858,7 +858,7 @@ export default {
       return reversed.reverse()
     }
   },
-  async beforeMount() {
+  beforeMount() {
     if (localStorage.getItem('__user__plaque')) {
       this.plaqueData = JSON.parse(localStorage.getItem('__user__plaque'))
     }
