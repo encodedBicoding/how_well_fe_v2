@@ -90,7 +90,7 @@ export default {
       resetPasswordData: ''
     }
   },
-  beforeMount() {
+  mounted() {
     if (
       this.$route.params.email === 'HN_jkdjw_322' &&
       this.$route.params.token === 'reset'
