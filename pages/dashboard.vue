@@ -860,7 +860,7 @@ export default {
   },
   beforeMount() {
     if (localStorage.getItem('__user__plaque')) {
-      this.plaqueData = JSON.parse(localStorage.getItem('__user__plaque'))
+      this.plaqueData = [...JSON.parse(localStorage.getItem('__user__plaque'))]
     }
   },
   async mounted() {
