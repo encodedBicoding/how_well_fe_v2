@@ -643,7 +643,6 @@ export default {
       }).then((res) => {
         this.fetchingPlaqueData = false
         if (res.status === 200 || res.status === 201) {
-          localStorage.setItem('__user__plaque', JSON.stringify(res.data))
           this.plaqueData = [...res.data]
           return true
         }
@@ -856,11 +855,6 @@ export default {
     reversedPlaqueData: function reversedPlaqueData() {
       const reversed = this.plaqueData
       return reversed.reverse()
-    }
-  },
-  beforeMount() {
-    if (localStorage.getItem('__user__plaque')) {
-      this.plaqueData = [...JSON.parse(localStorage.getItem('__user__plaque'))]
     }
   },
   async mounted() {
