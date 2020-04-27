@@ -190,7 +190,7 @@
     </div>
     <div :class="deleteQuestionModal ? 'modal' : 'hideModal'">
       <div class="f-right" @click="() => hidePlaque()">X</div>
-      <div class="modal-content">
+      <div class="modal-content create-plaque-modal">
         <div class="modal-form">
           <div class="ays">
             <p>Delete Question?</p>
@@ -643,6 +643,7 @@ export default {
       }).then((res) => {
         this.fetchingPlaqueData = false
         if (res.status === 200 || res.status === 201) {
+          localStorage.setItem('__user__plaque', JSON.stringify(res.data))
           this.plaqueData = [...res.data]
           return true
         }
@@ -855,6 +856,11 @@ export default {
     reversedPlaqueData: function reversedPlaqueData() {
       const reversed = this.plaqueData
       return reversed.reverse()
+    }
+  },
+  async beforeMount() {
+    if (localStorage.getItem('__user__plaque')) {
+      this.plaqueData = JSON.parse(localStorage.getItem('__user__plaque'))
     }
   },
   async mounted() {
