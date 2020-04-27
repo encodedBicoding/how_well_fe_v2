@@ -627,7 +627,6 @@ export default {
         }
       }).then((res) => {
         this.loadingSinglePlaque = false
-        localStorage.setItem('__single_plaque__data', JSON.stringify(res.data))
         this.plaqueData = { ...res.data }
         if (this.plaqueData.Questions.length > 0) {
           this.hasQuestions = true
@@ -688,14 +687,6 @@ export default {
           this.submittingResponse = false
         }, 2500)
       })
-    }
-  },
-  beforeMount() {
-    console.log()
-    if (localStorage.getItem('__single_plaque__data')) {
-      this.plaqueData = JSON.parse(
-        localStorage.getItem('__single_plaque__data')
-      )
     }
   },
   async mounted() {
