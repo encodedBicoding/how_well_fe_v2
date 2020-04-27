@@ -689,6 +689,7 @@ export default {
       })
     }
   },
+
   async mounted() {
     this.loadingSinglePlaque = true
     this.validateUserRoute()
