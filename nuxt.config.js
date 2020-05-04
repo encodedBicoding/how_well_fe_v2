@@ -76,6 +76,11 @@ module.exports = {
         name: 'twitter:description',
         content:
           '    How well do you know me, is the best FREE anonymous messaging and online quiz platform.'
+      },
+      {
+        hid: 'google-site-verification',
+        name: 'google-site-verification',
+        content: '1Xr1LGEDUhq_6w8PTc0adfuNpPQ5Dlwbl3RYINswVXk'
       }
     ],
     link: [
