@@ -756,7 +756,10 @@ export default {
         this.optionData[0] !== '' &&
         this.showQueAnswer
       ) {
-        if (!this.optionData.includes(this.answerData)) {
+        if (
+          this.answerData !== 'n/a' &&
+          !this.optionData.includes(this.answerData)
+        ) {
           this.optionData.push(this.answerData)
         }
       }
