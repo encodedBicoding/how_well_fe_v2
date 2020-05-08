@@ -39,7 +39,7 @@
               <li style="margin-bottom: .6rem;">
                 Create an account. Click
                 <a
-                  href="https://hwdykm.xyz"
+                  href="https://www.hwdykm.xyz"
                   target="_blank"
                   class="lime"
                   style="text-decoration: none; font-weight: 700"
