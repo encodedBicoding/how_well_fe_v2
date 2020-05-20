@@ -394,7 +394,9 @@
                               :value="opt"
                               :placeholder="opt"
                             />
-                            <label :for="opt" class="resLabel">{{ opt }}</label>
+                            <label :for="opt" class="resLabel capitalize">{{
+                              opt
+                            }}</label>
                           </div>
                         </div>
                         <div class="yreplybtn">
@@ -620,7 +622,7 @@ export default {
             name: 'begin',
             params: { haveAccountAlready: true }
           })
-          this.loadingSinglePlaque = true
+          this.loadingSinglePlaque = false
         },
         success: () => {
           this.loadingSinglePlaque = false
