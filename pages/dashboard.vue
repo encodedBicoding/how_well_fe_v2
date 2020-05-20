@@ -474,8 +474,8 @@ export default {
       if (!this.questionToEditQuestion) {
         return
       }
-      if (!this.questionToEditAnswer) {
-        this.questionToEditAnswer = 'N/A'
+      if (!this.questionToEditAnswer || this.questionToEditAnswer === 'n/a') {
+        this.questionToEditAnswer = 'n/a'
         this.showQueEditAnswers = false
       }
       this.questionToEditOptions = this.questionToEditOptions
@@ -486,7 +486,10 @@ export default {
         this.questionToEditOptions[0] !== '' &&
         this.showQueEditAnswers
       ) {
-        if (!this.questionToEditOptions.includes(this.questionToEditAnswer)) {
+        if (
+          this.questionToEditAnswer !== 'n/a' &&
+          !this.questionToEditOptions.includes(this.questionToEditAnswer)
+        ) {
           this.questionToEditOptions.push(this.questionToEditAnswer)
         }
       }
@@ -495,7 +498,9 @@ export default {
       const distinctData = []
 
       for (let data of this.questionToEditOptions) {
-        distinctData.push(data)
+        if (data != '') {
+          distinctData.push(data)
+        }
       }
 
       this.isRequesting = true
@@ -506,7 +511,7 @@ export default {
       }, {})
 
       this.questionToEditOptions = distinctData
-      formData.options = this.questionToEditOptions
+      formData.options = this.questionToEditOptions || []
       formData.showAnswer = this.showQueEditAnswers
       formData.answer = this.questionToEditAnswer
       $.ajax({
@@ -744,13 +749,12 @@ export default {
       }
 
       if (!this.answerData) {
-        this.answerData = 'N/A'
+        this.answerData = 'n/a'
       }
 
       this.optionData = this.optionData
         .split(',')
         .map((od) => od.trim().toLowerCase())
-      this.answerData = this.answerData.trim().toLowerCase()
       if (
         this.optionData.length >= 0 &&
         this.optionData[0] !== '' &&
@@ -768,7 +772,9 @@ export default {
       const distinctData = []
 
       for (let data of this.optionData) {
-        distinctData.push(data)
+        if (data != '') {
+          distinctData.push(data)
+        }
       }
 
       this.optionData = distinctData

@@ -172,6 +172,14 @@
             this platform to teach people in a Q & A answer session, quiz, for
             FREE
           </p>
+          <ins
+            class="adsbygoogle"
+            style="display:block"
+            data-ad-client="ca-pub-6604666533289792"
+            data-ad-slot="5781116894"
+            data-ad-format="auto"
+            data-full-width-responsive="true"
+          ></ins>
         </div>
         <!-- Cards one-->
         <div class="row cards-row">

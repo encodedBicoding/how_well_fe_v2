@@ -52,6 +52,10 @@
   margin-top: 2.4rem;
   border-radius: 2px;
   height: inherit;
+  overflow: hidden;
+}
+.capitalize{
+  text-transform: capitalize !important;
 }
 .pph{
   width: 100% !important;
@@ -102,7 +106,6 @@
 .resLabel{
   margin-left: 5px;
   font-size: .8rem;
-  text-transform: lowercase;
   font-weight: 550;
 }
 .resIC{
