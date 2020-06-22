@@ -135,7 +135,7 @@ module.exports = {
         trailingSlash: false,
         defaults: {},
         pathGzip: '/sitemap.xml',
-        hostname: 'https://hwdykm.xyz'
+        hostname: 'https://www.hwdykm.xyz'
       }
     ],
     [
