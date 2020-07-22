@@ -224,40 +224,8 @@
             <div class="resFormContainer">
               <form class="resForm">
                 <div class="resFormData">
-                  <label for="name"
-                    >Full name: <span class="red">*</span></label
-                  >
+                  <label for="name">Name: <span class="red">*</span></label>
                   <input v-model="resName" type="text" name="name" />
-                </div>
-                <div class="resFormData">
-                  <label for="school">School:<span class="red">*</span></label>
-                  <input v-model="resSchool" type="text" name="school" />
-                </div>
-                <div class="resFormData">
-                  <label for="class">Class:<span class="red">*</span></label>
-                  <input v-model="resClass" type="text" name="class" />
-                </div>
-                <div class="resFormData">
-                  <label for="tn"
-                    >Teacher's Name:<span class="red">*</span></label
-                  >
-                  <input v-model="resTeacherName" type="text" name="tn" />
-                </div>
-                <div class="resFormData">
-                  <label for="country"
-                    >Select Country:<span class="red">*</span></label
-                  >
-                  <select
-                    v-model="resCountry"
-                    name="country"
-                    class="resCountry"
-                  >
-                    <option disabled selected>Choose country</option>
-                    <option value="america">America</option>
-                    <option value="ghana">Ghana</option>
-                    <option value="kenya">Kenya</option>
-                    <option value="nigeria">Nigeria</option>
-                  </select>
                 </div>
                 <div class="resFormAction">
                   <div class="formCAction" @click="(e) => skipForm(e)">
@@ -547,21 +515,11 @@ export default {
     },
     continueForm(e) {
       e.preventDefault()
-      if (
-        !this.resName ||
-        !this.resSchool ||
-        !this.resClass ||
-        !this.resTeacherName ||
-        !this.resCountry
-      ) {
+      if (!this.resName) {
         return
       }
       const author = {}
       author.name = this.resName
-      author.school = this.resSchool
-      author.class = this.resClass
-      author.country = this.resCountry.toLowerCase()
-      author.teacherName = this.resTeacherName
       sessionStorage.setItem('__author__', JSON.stringify(author))
       this.skippedDataSharing = true
     },
