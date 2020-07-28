@@ -742,9 +742,19 @@ export default {
     addQuestionToPlaque(event, plaqueId) {
       event.preventDefault()
       if (!this.questionData) {
+        this.$swal({
+          icon: 'warning',
+          title: 'OOps...',
+          text: 'you need to add a question'
+        })
         return
       }
       if (this.showQueAnswer && !this.answerData) {
+        this.$swal({
+          icon: 'warning',
+          title: 'OOps...',
+          text: 'you need to add an answer'
+        })
         return
       }
 
@@ -761,8 +771,8 @@ export default {
         this.showQueAnswer
       ) {
         if (
-          this.answerData !== 'n/a' &&
-          !this.optionData.includes(this.answerData)
+          this.answerData.trim().toLowerCase() !== 'n/a' &&
+          !this.optionData.includes(this.answerData.trim().toLowerCase())
         ) {
           this.optionData.push(this.answerData)
         }
