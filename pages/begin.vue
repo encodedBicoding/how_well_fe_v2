@@ -153,7 +153,6 @@
 import $ from 'jquery'
 import BASE_URL from '~/helpers/ajax.js'
 import FE_URL from '~/helpers/feUrl.js'
-
 export default {
   data() {
     return {
