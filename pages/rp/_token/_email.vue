@@ -78,7 +78,7 @@
 </template>
 <script>
 import $ from 'jquery'
-import BASE_URL from '~/helpers/ajax'
+const BASE_URL = process.env.SERVER_API
 
 export default {
   data() {

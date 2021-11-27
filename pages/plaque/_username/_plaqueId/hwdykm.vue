@@ -454,8 +454,9 @@
 <script>
 import $ from 'jquery'
 import Footer from '~/components/Footer.vue'
-import BASE_URL from '~/helpers/ajax'
 import FE_URL from '~/helpers/feUrl'
+
+const BASE_URL = process.env.SERVER_API
 
 export default {
   name: 'Plaque',
