@@ -151,8 +151,9 @@
 </template>
 <script>
 import $ from 'jquery'
-import BASE_URL from '~/helpers/ajax.js'
 import FE_URL from '~/helpers/feUrl.js'
+
+const BASE_URL = process.env.SERVER_API
 export default {
   data() {
     return {

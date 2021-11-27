@@ -384,9 +384,10 @@ ${frontendURL}/plaque/${plaqueOwnerName}/${plaque.id}/hwdykm
 import $ from 'jquery'
 import plaque from '~/components/Plaque.vue'
 import Footer from '~/components/Footer.vue'
-import BASE_URL from '~/helpers/ajax'
 import suggestions from '~/helpers/suggestions'
 import FE_URL from '../helpers/feUrl'
+
+const BASE_URL = process.env.SERVER_API
 
 export default {
   name: 'Dashboard',

@@ -182,6 +182,14 @@
             <div class="noQue">
               <p>This plaque currently has no questions</p>
               <p>Click + to add questions to plaque</p>
+              <div class="flex-center">
+                <font-awesome-icon
+                  :icon="['fas', 'plus']"
+                  :class="questions.length >= 15 ? 'greyDisabled' : 'red'"
+                  size="lg"
+                  @click="() => showPlaque(plaqueId, questions.length)"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -191,8 +199,6 @@
 </template>
 
 <script>
-import FE_URL from '../helpers/feUrl'
-
 export default {
   name: 'Plaque',
   props: {
@@ -242,7 +248,7 @@ export default {
     }
   },
   mounted() {
-    this.singlePlaqueLink = `${FE_URL}/plaque/${this.username ||
+    this.singlePlaqueLink = `${process.env.FE_URL}/plaque/${this.username ||
       localStorage.getItem('__user__')}/${this.plaqueId}/hwdykm`
   },
   methods: {
