@@ -185,7 +185,8 @@
               <div class="flex-center">
                 <font-awesome-icon
                   :icon="['fas', 'plus']"
-                  :class="questions.length >= 15 ? 'greyDisabled' : 'red'"
+                  :class="questions.length >= 15 ? 
+                  'pointer greyDisabled' : 'pointer red'"
                   size="lg"
                   @click="() => showPlaque(plaqueId, questions.length)"
                 />
