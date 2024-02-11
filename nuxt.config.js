@@ -16,7 +16,7 @@ module.exports = {
   privateRuntimeConfig: {
     SERVER_API: process.env.SERVER_API || process.env.NODE_ENV === 'production' ? 'https://how-well-api.onrender.com/api/v1' : 'http://localhost:4000/api/v1',
     FE_URL: process.env.FE_URL || process.env.NODE_ENV === 'production' ? 'https://how-well-fe-v2.onrender.com' : 'http://localhost:3000', 
-    HOST: process.env.HOST || '0.0.0.0'git
+    HOST: process.env.HOST || '0.0.0.0'
   },
   /*
    ** Headers of the page
