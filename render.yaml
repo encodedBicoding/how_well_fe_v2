@@ -1,0 +1,7 @@
+services:
+- type: web
+  name: nuxt-js
+  env: node
+  plan: starter
+  buildCommand: npm; npm build
+  startCommand: npm start

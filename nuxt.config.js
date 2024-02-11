@@ -4,9 +4,9 @@ module.exports = {
     fallback: true
   },
   publicRuntimeConfig: {
-    SERVER_API: process.env.SERVER_API,
-    FE_URL: process.env.FE_URL,
-    HOST: process.env.HOST
+    SERVER_API: process.env.SERVER_API || 'https://how-well-api.onrender.com/api/v1',
+    FE_URL: process.env.FE_URL || 'https://how-well-fe-v2.onrender.com',
+    HOST: process.env.HOST || '0.0.0.0'
   },
   privateRuntimeConfig: {},
   /*
