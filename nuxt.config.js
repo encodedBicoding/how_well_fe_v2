@@ -3,6 +3,12 @@ module.exports = {
   generate: {
     fallback: true
   },
+  publicRuntimeConfig: {
+    SERVER_API: process.env.SERVER_API,
+    FE_URL: process.env.FE_URL,
+    HOST: process.env.HOST
+  },
+  privateRuntimeConfig: {},
   /*
    ** Headers of the page
    */
@@ -108,8 +114,8 @@ module.exports = {
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    // '@nuxtjs/eslint-module',
-    // '@nuxtjs/dotenv',
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/dotenv',
   ],
   /*
    ** Nuxt.js modules
