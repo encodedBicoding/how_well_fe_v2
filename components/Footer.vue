@@ -21,7 +21,7 @@
         <p>
           Copyright &copy; {{ getYear() }}. All Rights Reserved. Brought to you
           by
-          <a href="https://encodedbicoding.com" target="_blank" class="ebc"
+          <a href="#" target="#" class="ebc"
             >encodedBicoding</a
           >
         </p>
