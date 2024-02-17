@@ -39,14 +39,14 @@
       </div>
       <div class="linkQ">
         <div title="copy plaque link" class="link-flex">
-          <button class="cpTxt" @click="() => copyLink(plaqueUrl)">
+          <button class="cpTxt" @click="() => copyLink(plaqueUrl, plaqueName)">
             Copy link
           </button>
           <font-awesome-icon
             :icon="['fas', 'link']"
             class="CLF5 link-hover"
             size="lg"
-            @click="() => copyLink(plaqueUrl)"
+            @click="() => copyLink(plaqueUrl, plaqueName)"
           />
           <div :class="copy ? 'copied' : 'copied display-none'">
             <p>plaque link copied</p>
@@ -260,7 +260,7 @@ export default {
     toggleResponse(id) {
       this.showResponse = this.showResponse === id ? 0 : id
     },
-    copyLink(link) {
+    copyLink(link, name) {
       if (navigator.userAgent.match(/ipad|iphone/i)) {
         const ta = document.createElement('textarea')
         ta.readOnly = true

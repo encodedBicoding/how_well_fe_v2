@@ -310,8 +310,7 @@
                   :username="plaqueOwnerName"
                   :plaque-url="
                     `
-
-I have a Quiz for you.
+I have a (${capitalize(plaque.name)}) Quiz for you.
 This should be fun 😊
 
 👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇👇
@@ -406,6 +405,15 @@ export default {
     }
   },
   methods: {
+    capitalize(words) {
+      const b = words.split(' ').map((w) => {
+        let first = w[0].toUpperCase();
+        let others = w.slice(1, w.length).toLowerCase()
+        let data = `${first}${others}`;
+        return data;
+      });
+      return b.join(' ');
+    },
     activateAnswer() {
       this.showQueAnswer = !this.showQueAnswer
     },
