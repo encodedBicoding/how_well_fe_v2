@@ -172,8 +172,12 @@
                   <div v-html="response.author"></div>
                 </div>
                 <div class="resComment">
-                  <span><b>Response</b>: </span>
+                  <span><b>Responsess</b>: </span>
                   <span>{{ response.response }}</span>
+                  <span 
+                    v-if="response.responseStatus !== 'not_applicable'"
+                    :class="response.responseStatus === 'correct' ? 'response_icon pass' : 'response_icon no-pass'"
+                    ></span>
                 </div>
               </div>
             </div>

@@ -75,3 +75,19 @@
 .tdnone{
   text-decoration: none;
 }
+
+.response_icon{
+  margin-left: .1rem;
+  font-size: 1.3rem;;
+}
+.response_icon.pass::before {
+  content: '✓';
+  outline: green;
+  color: green;
+}
+
+.response_icon.no-pass::before {
+  content: '𐄂';
+  outline: red;
+  color: red;
+}

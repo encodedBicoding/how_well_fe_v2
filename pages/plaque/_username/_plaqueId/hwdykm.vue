@@ -184,6 +184,10 @@
                       <div class="resComment">
                         <span><b>Response</b>: </span>
                         <span>{{ response.response }}</span>
+                        <span 
+                          v-if="response.responseStatus !== 'not_applicable'"
+                          :class="response.responseStatus === 'correct' ? 'response_icon pass' : 'response_icon no-pass'"
+                          ></span>
                       </div>
                     </div>
                   </div>
@@ -389,7 +393,7 @@
                           {{ this.$route.params.username.toUpperCase() }},
                         </span>
                         click
-                        <a :href="frontendUrl" class="bold-text here">HERE</a>
+                        <a :href="frontendUrl + '/begin'" class="bold-text here">HERE</a>
                         to create your account!
                       </p>
                       <!-- hwdykm -->
@@ -423,17 +427,21 @@
               </div>
             </div>
           </div>
-          <div v-if="!plaqueData.hasOwnProperty('name') || !hasQuestions">
+          <div v-if="!loadingSinglePlaque">
+            <div class="plaqueLoading" v-if="!loadingSinglePlaque">
+                <p>
+                  Loading plaque data. Please wait...
+                </p>
+              </div>
+          </div>
+          <div v-else>
+            <div v-if="!plaqueData.hasOwnProperty('name') || !hasQuestions">
             <div class="no-p-fl">
               <div v-if="!loadingSinglePlaque" class="np-content">
                 <p>NO QUESTIONS IN PLAQUE</p>
               </div>
-              <div class="plaqueLoading">
-                <p v-if="loadingSinglePlaque">
-                  Loading plaque data. Please wait...
-                </p>
-              </div>
             </div>
+          </div>
           </div>
         </div>
         <div class="footer">
@@ -621,10 +629,15 @@ export default {
         data: JSON.stringify(formData),
         dataType: 'json',
         contentType: 'application/json',
+        xhrFields: {
+          withCredentials: true
+        },
+        crossDomain: true,
         error: (res) => {
-          this.responseAnswer = ''
+          console.log(res)
+          this.submittingResponse = false;
         }
-      }).then(() => {
+      }).then((res) => {
         if (this.currentQuestion + 1 === this.plaqueData.Questions.length) {
           setTimeout(() => {
             this.currentQuestion = null
