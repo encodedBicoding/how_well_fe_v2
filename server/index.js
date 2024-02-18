@@ -1,6 +1,7 @@
 const express = require('express')
 const consola = require('consola')
 const { Nuxt, Builder } = require('nuxt')
+const Cron = require('./cron.js');
 const app = express()
 
 // Import and Set Nuxt.js options
@@ -22,6 +23,8 @@ async function start() {
 
   // Give nuxt middleware to express
   app.use(nuxt.render)
+
+  await new Cron().execute();
 
   // Listen the server
   app.listen(port, host)
