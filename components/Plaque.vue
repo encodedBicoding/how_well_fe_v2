@@ -172,7 +172,7 @@
                   <div v-html="response.author"></div>
                 </div>
                 <div class="resComment">
-                  <span><b>Responsess</b>: </span>
+                  <span><b>Response</b>: </span>
                   <span>{{ response.response }}</span>
                   <span 
                     v-if="response.responseStatus !== 'not_applicable'"
