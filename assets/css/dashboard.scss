@@ -29,6 +29,7 @@
   border-bottom: 1px solid rgba(255, 255, 255, 0.438);
 }
 .body{
+  position: relative;
   width: 50%;
   background-color: rgba(7, 7, 7, 0.226);
   padding: 1rem;
@@ -40,12 +41,12 @@
   overflow: scroll;
 }
 .add-plaque-body{
-  position: sticky !important;
+  position: absolute !important;
+  right: 5%;
   padding: 3px;
   background: transparent;
-  bottom: 2px;
-  margin-left: 80%;
-  margin-top: .5rem;
+  bottom: 15%;
+  z-index: 99;
 }
 .add{
   font-weight: 700;
@@ -75,6 +76,7 @@
   align-items: center;
 }
 .container{
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -508,7 +510,8 @@ and (min-device-width: 561px) {
       width: 100% !important;
     }
     .add-plaque-body{
-      position: sticky !important;
+      position: absolute !important;
+      z-index: 99;
     }
     .noPlaqueC{
       display: flex;
