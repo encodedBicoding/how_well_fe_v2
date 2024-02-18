@@ -615,6 +615,8 @@ export default {
         formData.country = respondingUser.country
         formData.teacherName = respondingUser.teacherName
       }
+      } else {
+        formData.responseId = this.responseId
       }
       let prevCount = ''
       this.showAnswer = true
@@ -632,6 +634,9 @@ export default {
           this.submittingResponse = false;
         }
       }).then((res) => {
+        if(res.responseId && this.skippedDataSharing) {
+          this.responseId = res.responseId
+        }
         if (this.currentQuestion + 1 === this.plaqueData.Questions.length) {
           setTimeout(() => {
             this.currentQuestion = null
@@ -689,7 +694,8 @@ export default {
       resSchool: '',
       resClass: '',
       resTeacherName: '',
-      resCountry: ''
+      resCountry: '',
+      responseId: null,
     }
   }
 }

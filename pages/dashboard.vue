@@ -349,11 +349,6 @@ ${frontendURL}/plaque/${plaqueOwnerName}/${plaque.id}/hwdykm
             </div>
           </div>
         </div>
-        <div v-if="fetchingPlaqueData" class="fetching page-body-remix">
-          <div class="ft-text">
-            <p>Loading plaque data...</p>
-          </div>
-        </div>
         <div class="add-plaque-body">
           <div class="add" @click="() => toggleModal()">
             <div class="bg-icon">
