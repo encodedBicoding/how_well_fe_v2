@@ -1,6 +1,7 @@
 const dotenv = require('dotenv');
-const axios = require('axios')
 const cron = require('node-cron')
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+
 dotenv.config();
 class Cron {
     constructor() {}
@@ -10,10 +11,9 @@ class Cron {
     }
 
     async preventSleep() {
-        cron.schedule('10 * * * *', async () => {
-            axios({
+        cron.schedule('* * * * *', async () => {
+            await fetch(process.env.SERVER_API,{
                 method: 'GET',
-                url: process.env.SERVER_API,
             })
             .then((response) => {
                 if(response.status === 200) {
