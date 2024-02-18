@@ -11,7 +11,7 @@ class Cron {
     }
 
     async preventSleep() {
-        cron.schedule('* * * * *', async () => {
+        cron.schedule('10 * * * *', async () => {
             await fetch(process.env.SERVER_API,{
                 method: 'GET',
             })
