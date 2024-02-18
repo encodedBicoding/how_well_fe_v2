@@ -596,6 +596,7 @@ export default {
       })
     },
     submitResponse(e, id) {
+      if(this.submittingResponse) return;
       e.preventDefault()
       if (!this.responseAnswer) {
         return
