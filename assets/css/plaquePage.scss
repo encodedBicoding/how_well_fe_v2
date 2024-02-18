@@ -30,7 +30,7 @@
 }
 .ppqueContainer{
   overflow: scroll;
-  height: 350px;
+  height: calc(100vh - 25vh);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   background-color: #fff;
@@ -289,7 +289,7 @@
 
 @media(width: 2560px) {
   .ppqueContainer{
-    height: 800px;
+    height: calc(100vh - 25vh);
   }
   *{
     font-size: 1.33rem;
@@ -297,7 +297,7 @@
 }
 @media(max-width: 425px) {
   .ppqueContainer{
-    height: 392px;
+    height: calc(100vh - 25vh);
   }
   .container{
     margin: 0;
@@ -348,7 +348,7 @@
       font-size: 3.2rem !important;
     }
     .ppqueContainer{
-      height: 900px;
+      height: calc(100vh - 25vh);
     }
     .queToAnswer{
       height: inherit;
@@ -373,7 +373,7 @@
       font-size: 3.2rem !important;
     }
     .ppqueContainer{
-      height: 900px;
+      height: calc(100vh - 25vh);
     }
   }
   @media only screen 
@@ -389,12 +389,12 @@
       font-size: 1.2rem;
     }
     .ppqueContainer{
-      height: 600px;
+      height: calc(100vh - 25vh);
     }
 }
   @media(max-width: 425px) {
   .ppqueContainer{
-    height: 392px;
+    height: calc(100vh - 25vh);
   }
   .container{
     margin: 0;

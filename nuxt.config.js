@@ -109,7 +109,12 @@ module.exports = {
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: 'rgba(174,247,2,.651)' },
+  loading: '~/components/LoadingPage.vue',
+  loadingIndicator: {
+    name: 'circle',
+    color: '#3B8070',
+    background: 'white'
+  },
   /*
    ** Global CSS
    */
