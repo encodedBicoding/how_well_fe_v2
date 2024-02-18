@@ -36,7 +36,8 @@
   flex-grow: 2;
 }
 .page-body-remix{
-  height: inherit;
+  height: calc(100vh - 25vh);
+  overflow: scroll;
 }
 .add-plaque-body{
   position: sticky !important;

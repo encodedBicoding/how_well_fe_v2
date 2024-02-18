@@ -873,6 +873,30 @@ export default {
       })
     }
   },
+  watch: {
+    isRequesting(nv, ov) {
+      if(nv) {
+        this.$nextTick(() => {
+          this.$nuxt.$loading.start()
+       })
+      } else {
+        this.$nextTick(() => {
+          this.$nuxt.$loading.finish()
+        })
+      }
+    },
+    fetchingPlaqueData(nv, ov) {
+      if(nv) {
+        this.$nextTick(() => {
+          this.$nuxt.$loading.start()
+       })
+      } else {
+        this.$nextTick(() => {
+          this.$nuxt.$loading.finish()
+        })
+      }
+    }
+  },
   computed: {
     hasPlaque: function hasPlaque() {
       if (this.plaqueData.length > 0) {

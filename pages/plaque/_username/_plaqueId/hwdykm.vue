@@ -428,13 +428,6 @@
             </div>
           </div>
           <div v-if="!loadingSinglePlaque">
-            <div class="plaqueLoading" v-if="!loadingSinglePlaque">
-                <p>
-                  Loading plaque data. Please wait...
-                </p>
-              </div>
-          </div>
-          <div v-else>
             <div v-if="!plaqueData.hasOwnProperty('name') || !hasQuestions">
             <div class="no-p-fl">
               <div v-if="!loadingSinglePlaque" class="np-content">
@@ -591,15 +584,15 @@ export default {
           })
           this.loadingSinglePlaque = false
         },
-        success: () => {
-          this.loadingSinglePlaque = false
-        }
       }).then((res) => {
-        this.loadingSinglePlaque = false
         this.plaqueData = { ...res.data }
         if (this.plaqueData.Questions.length > 0) {
           this.hasQuestions = true
         }
+        this.$nextTick(() => {
+          this.$nuxt.$loading.finish()
+        })
+        this.loadingSinglePlaque = false
       })
     },
     submitResponse(e, id) {
@@ -613,13 +606,15 @@ export default {
         acc[curr.name] = curr.value.trim()
         return acc
       }, {})
-      if (sessionStorage.getItem('__author__')) {
+      if(!this.skippedDataSharing) {
+        if (sessionStorage.getItem('__author__')) {
         const respondingUser = JSON.parse(sessionStorage.getItem('__author__'))
         formData.name = respondingUser.name
         formData.school = respondingUser.school
         formData.classInSchool = respondingUser.class
         formData.country = respondingUser.country
         formData.teacherName = respondingUser.teacherName
+      }
       }
       let prevCount = ''
       this.showAnswer = true
@@ -663,15 +658,18 @@ export default {
     }
   },
 
+  beforeMount() {
+    this.$nextTick(() => {
+      this.$nuxt.$loading.start()
+    })
+  },
+
   async mounted() {
-    this.loadingSinglePlaque = true
     this.validateUserRoute()
     if (sessionStorage.getItem('__token__HWDYKM__user__')) {
       await this.getCurrentUser()
-      this.loadingSinglePlaque = false
     }
     await this.getSinglePlaque()
-    this.loadingSinglePlaque = false
   },
   data() {
     return {
@@ -686,7 +684,7 @@ export default {
       plaqueData: {},
       responseAnswer: '',
       submittingResponse: false,
-      loadingSinglePlaque: false,
+      loadingSinglePlaque: true,
       resName: '',
       resSchool: '',
       resClass: '',
