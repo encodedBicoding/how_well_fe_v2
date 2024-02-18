@@ -5,6 +5,7 @@ const app = express()
 
 // Import and Set Nuxt.js options
 const config = require('../nuxt.config.js')
+const Cron = require('./cron.js')
 config.dev = process.env.NODE_ENV !== 'production'
 
 async function start() {
@@ -22,6 +23,7 @@ async function start() {
 
   // Give nuxt middleware to express
   app.use(nuxt.render)
+  await new Cron().execute();
 
   // Listen the server
   app.listen(port, host)
