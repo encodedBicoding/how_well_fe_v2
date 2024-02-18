@@ -44,7 +44,8 @@
   padding: 3px;
   background: transparent;
   bottom: 2px;
-  margin-left: 80%;
+  float: right;
+  margin-top: .5rem;
 }
 .add{
   font-weight: 700;
@@ -415,6 +416,12 @@ input:checked + .slider:before {
   color: #000 !important;
   border-radius: 4px;
   padding: 1rem;
+}
+@media(max-width: 425px) {
+  .page-body-remix{
+    height: calc(100vh - 30vh);
+    overflow: scroll;
+  }
 }
 @media only screen 
 and (max-device-width: 1024px)
