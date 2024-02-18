@@ -634,7 +634,6 @@ export default {
         },
         crossDomain: true,
         error: (res) => {
-          console.log(res)
           this.submittingResponse = false;
         }
       }).then((res) => {
